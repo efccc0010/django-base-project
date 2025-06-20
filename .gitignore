@@ -1,0 +1,38 @@
+# Entorno virtual
+env/
+.venv/
+
+# Archivos de entorno
+.env
+
+# Archivos de compilación
+__pycache__/
+*.py[cod]
+
+# Archivos de base de datos locales
+*.sqlite3
+
+# Archivos de migración innecesarios
+**/migrations/*.pyc
+**/migrations/__pycache__/
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Docker
+*.log
+*.pid
+*.seed
+*.pid.lock
+docker-compose.override.yml
+
+# Archivos de cobertura de pruebas
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
