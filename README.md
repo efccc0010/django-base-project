@@ -99,3 +99,13 @@ django-base-project/
 ```
 Integración con JWT usando djangorestframework-simplejwt (opcional).
 ```
+
+## 📦 Próximas mejoras
+- Autenticación con JWT
+- Gestión de permisos por grupos
+- Dockerfile para entorno completo
+- Deploy automático a Railway/Render/Heroku
+
+## 🧑‍💻 Autor
+Edgar Fernando Carrión Ccoicca
+Repositorio: github.com/efccc0010
