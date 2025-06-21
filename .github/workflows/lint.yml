@@ -19,17 +19,16 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install lint dependencies
         run: |
-          python -m venv env
-          source env/bin/activate
+          pip install --upgrade pip
           pip install black flake8 isort
 
       - name: Run Black (check only)
-        run: black . --check
+        run: black . --check --diff
 
-      - name: Run isort (check only)
-        run: isort . --check-only
+      - name: Run Isort (check only)
+        run: isort . --check-only --diff
 
       - name: Run Flake8
         run: flake8 .
