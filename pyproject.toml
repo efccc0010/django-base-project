@@ -1,12 +1,15 @@
 [tool.black]
 line-length = 88
-target-version = ["py38"]
+target-version = ['py38']
 exclude = '''
 /(
-  \.git
-  | \.mypy_cache
-  | \.venv
+    \.venv
   | env
+  | venv
+  | \.env
+  | \.git
+  | \.migrations
+  | __pycache__
   | build
   | dist
 )/
@@ -15,8 +18,10 @@ exclude = '''
 [tool.isort]
 profile = "black"
 line_length = 88
+skip = ["env", "venv", ".env", "__pycache__", "migrations"]
 
 [tool.flake8]
 max-line-length = 88
-extend-ignore = E203, W503
-exclude = .git,__pycache__,env,venv,migrations
+ignore = ["E203", "W503", "E303"]
+exclude = ["env", "venv", ".env", "__pycache__", "migrations"]
+

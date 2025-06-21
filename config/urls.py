@@ -14,12 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.http import JsonResponse
 from django.urls import include, path
 
 urlpatterns = [
-    path('', lambda request: JsonResponse({"message": "Bienvenido a la API 🚀"})),  # 👈 solución para "/"
-    path('admin/', admin.site.urls),
-    path('api/', include('core.urls')),  # 👈 todo lo de la app core
+    path(
+        "", lambda request: JsonResponse({"message": "Bienvenido a la API 🚀"})
+    ),  # noqa
+    path("admin/", admin.site.urls),
+    path("api/", include("core.urls")),  # 👈 todo lo de la app core
 ]
