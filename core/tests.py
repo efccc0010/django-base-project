@@ -1,5 +1,9 @@
+from django.contrib.auth.models import User
 from django.test import TestCase
+from rest_framework.test import APITestCase
+
 from .models import Book
+
 
 class BookModelTest(TestCase):
     def test_create_book(self):
@@ -12,8 +16,7 @@ class BookModelTest(TestCase):
         self.assertEqual(str(book), "Clean Code")
 
 
-from rest_framework.test import APITestCase
-from django.contrib.auth.models import User
+
 
 class AuthTest(APITestCase):
     def setUp(self):

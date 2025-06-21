@@ -54,3 +54,9 @@ coverage:
 
 coverage-html:
 	coverage html
+
+lint:
+	flake8 .
+
+format:
+	isort . && black .

@@ -1,0 +1,35 @@
+name: Lint and Format Check
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m venv env
+          source env/bin/activate
+          pip install black flake8 isort
+
+      - name: Run Black (check only)
+        run: black . --check
+
+      - name: Run isort (check only)
+        run: isort . --check-only
+
+      - name: Run Flake8
+        run: flake8 .
