@@ -1,4 +1,5 @@
-DEBUG = True
-ALLOWED_HOSTS = []
+# flake8: noqa
+from .base import *
 
-# Puedes agregar aquí configuraciones adicionales específicas del entorno dev
+DEBUG = True
+ALLOWED_HOSTS = ["*"]
