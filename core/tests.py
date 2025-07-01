@@ -31,4 +31,4 @@ class AuthTest(APITestCase):
             }
         )
         self.assertEqual(response.status_code, 200)
-        self.assertIn("access", response.data)
+        self.assertIn("access", response.data)  # type: ignore
