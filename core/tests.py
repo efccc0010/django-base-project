@@ -20,7 +20,7 @@ class AuthTest(APITestCase):
 
     def test_jwt_login(self):
         response = self.client.post(
-            "/api/auth/token/", {"username": "testuser", "password": "testpass"}
+            "/api/token/", {"username": "testuser", "password": "testpass"}
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn("access", response.data)  # type: ignore
